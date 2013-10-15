@@ -21,6 +21,12 @@
 		4C29770D180D4EC6000246FC /* AdCalcTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C29770C180D4EC6000246FC /* AdCalcTests.m */; };
 		4C297717180D4F05000246FC /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C297716180D4F05000246FC /* MainStoryboard.storyboard */; };
 		4C29771A180D4F1A000246FC /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C297719180D4F1A000246FC /* MainViewController.m */; };
+		4C297722180D65D9000246FC /* AdCalc_AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C29771C180D65D9000246FC /* AdCalc_AppIcon.png */; };
+		4C297723180D65D9000246FC /* AdCalc_BackgroundImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C29771D180D65D9000246FC /* AdCalc_BackgroundImage.png */; };
+		4C297724180D65D9000246FC /* AdCalc_LoadUpScreen_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C29771E180D65D9000246FC /* AdCalc_LoadUpScreen_2x.png */; };
+		4C297725180D65D9000246FC /* AdCalc_LoadUpScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C29771F180D65D9000246FC /* AdCalc_LoadUpScreen.png */; };
+		4C297726180D65D9000246FC /* AdCalc_SettingsIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C297720180D65D9000246FC /* AdCalc_SettingsIcon.png */; };
+		4C297727180D65D9000246FC /* AdCalc_SpotlightIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C297721180D65D9000246FC /* AdCalc_SpotlightIcon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +59,12 @@
 		4C297716180D4F05000246FC /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainStoryboard.storyboard; path = ../MainStoryboard.storyboard; sourceTree = "<group>"; };
 		4C297718180D4F1A000246FC /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		4C297719180D4F1A000246FC /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		4C29771C180D65D9000246FC /* AdCalc_AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AdCalc_AppIcon.png; path = "../../../../../../Downloads/AdCalc-master/AdCalc/AdCalc_AppIcon.png"; sourceTree = "<group>"; };
+		4C29771D180D65D9000246FC /* AdCalc_BackgroundImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AdCalc_BackgroundImage.png; path = "../../../../../../Downloads/AdCalc-master/AdCalc/AdCalc_BackgroundImage.png"; sourceTree = "<group>"; };
+		4C29771E180D65D9000246FC /* AdCalc_LoadUpScreen_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AdCalc_LoadUpScreen_2x.png; path = "../../../../../../Downloads/AdCalc-master/AdCalc/AdCalc_LoadUpScreen_2x.png"; sourceTree = "<group>"; };
+		4C29771F180D65D9000246FC /* AdCalc_LoadUpScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AdCalc_LoadUpScreen.png; path = "../../../../../../Downloads/AdCalc-master/AdCalc/AdCalc_LoadUpScreen.png"; sourceTree = "<group>"; };
+		4C297720180D65D9000246FC /* AdCalc_SettingsIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AdCalc_SettingsIcon.png; path = "../../../../../../Downloads/AdCalc-master/AdCalc/AdCalc_SettingsIcon.png"; sourceTree = "<group>"; };
+		4C297721180D65D9000246FC /* AdCalc_SpotlightIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AdCalc_SpotlightIcon.png; path = "../../../../../../Downloads/AdCalc-master/AdCalc/AdCalc_SpotlightIcon.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +124,7 @@
 		4C2976ED180D4EC6000246FC /* AdCalc */ = {
 			isa = PBXGroup;
 			children = (
+				4C29771B180D65BA000246FC /* Images */,
 				4C297716180D4F05000246FC /* MainStoryboard.storyboard */,
 				4C2976F6180D4EC6000246FC /* MIJAppDelegate.h */,
 				4C2976F7180D4EC6000246FC /* MIJAppDelegate.m */,
@@ -150,6 +163,19 @@
 				4C297709180D4EC6000246FC /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4C29771B180D65BA000246FC /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				4C29771C180D65D9000246FC /* AdCalc_AppIcon.png */,
+				4C29771D180D65D9000246FC /* AdCalc_BackgroundImage.png */,
+				4C29771E180D65D9000246FC /* AdCalc_LoadUpScreen_2x.png */,
+				4C29771F180D65D9000246FC /* AdCalc_LoadUpScreen.png */,
+				4C297720180D65D9000246FC /* AdCalc_SettingsIcon.png */,
+				4C297721180D65D9000246FC /* AdCalc_SpotlightIcon.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +226,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Michael Jones";
 				TargetAttributes = {
+					4C2976E3180D4EC6000246FC = {
+						DevelopmentTeam = 7TZP8288QD;
+					};
 					4C2976FE180D4EC6000246FC = {
 						TestTargetID = 4C2976E3180D4EC6000246FC;
 					};
@@ -230,7 +259,13 @@
 			files = (
 				4C297717180D4F05000246FC /* MainStoryboard.storyboard in Resources */,
 				4C2976F2180D4EC6000246FC /* InfoPlist.strings in Resources */,
+				4C297724180D65D9000246FC /* AdCalc_LoadUpScreen_2x.png in Resources */,
+				4C297726180D65D9000246FC /* AdCalc_SettingsIcon.png in Resources */,
+				4C297723180D65D9000246FC /* AdCalc_BackgroundImage.png in Resources */,
+				4C297722180D65D9000246FC /* AdCalc_AppIcon.png in Resources */,
+				4C297725180D65D9000246FC /* AdCalc_LoadUpScreen.png in Resources */,
 				4C2976FA180D4EC6000246FC /* Images.xcassets in Resources */,
+				4C297727180D65D9000246FC /* AdCalc_SpotlightIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,7 +345,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Michael Jones (UTJ8F288RB)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -349,7 +384,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -370,10 +405,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AdCalc/AdCalc-Prefix.pch";
 				INFOPLIST_FILE = "AdCalc/AdCalc-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -383,10 +421,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AdCalc/AdCalc-Prefix.pch";
 				INFOPLIST_FILE = "AdCalc/AdCalc-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
