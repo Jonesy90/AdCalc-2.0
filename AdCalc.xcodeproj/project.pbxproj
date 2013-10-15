@@ -19,6 +19,8 @@
 		4C297703180D4EC6000246FC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C2976EB180D4EC6000246FC /* UIKit.framework */; };
 		4C29770B180D4EC6000246FC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C297709180D4EC6000246FC /* InfoPlist.strings */; };
 		4C29770D180D4EC6000246FC /* AdCalcTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C29770C180D4EC6000246FC /* AdCalcTests.m */; };
+		4C297717180D4F05000246FC /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C297716180D4F05000246FC /* MainStoryboard.storyboard */; };
+		4C29771A180D4F1A000246FC /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C297719180D4F1A000246FC /* MainViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,9 @@
 		4C297708180D4EC6000246FC /* AdCalcTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AdCalcTests-Info.plist"; sourceTree = "<group>"; };
 		4C29770A180D4EC6000246FC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4C29770C180D4EC6000246FC /* AdCalcTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdCalcTests.m; sourceTree = "<group>"; };
+		4C297716180D4F05000246FC /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainStoryboard.storyboard; path = ../MainStoryboard.storyboard; sourceTree = "<group>"; };
+		4C297718180D4F1A000246FC /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		4C297719180D4F1A000246FC /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,8 +112,11 @@
 		4C2976ED180D4EC6000246FC /* AdCalc */ = {
 			isa = PBXGroup;
 			children = (
+				4C297716180D4F05000246FC /* MainStoryboard.storyboard */,
 				4C2976F6180D4EC6000246FC /* MIJAppDelegate.h */,
 				4C2976F7180D4EC6000246FC /* MIJAppDelegate.m */,
+				4C297718180D4F1A000246FC /* MainViewController.h */,
+				4C297719180D4F1A000246FC /* MainViewController.m */,
 				4C2976F9180D4EC6000246FC /* Images.xcassets */,
 				4C2976EE180D4EC6000246FC /* Supporting Files */,
 			);
@@ -220,6 +228,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C297717180D4F05000246FC /* MainStoryboard.storyboard in Resources */,
 				4C2976F2180D4EC6000246FC /* InfoPlist.strings in Resources */,
 				4C2976FA180D4EC6000246FC /* Images.xcassets in Resources */,
 			);
@@ -241,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C2976F4180D4EC6000246FC /* main.m in Sources */,
+				4C29771A180D4F1A000246FC /* MainViewController.m in Sources */,
 				4C2976F8180D4EC6000246FC /* MIJAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
