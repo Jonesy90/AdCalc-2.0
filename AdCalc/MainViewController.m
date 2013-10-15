@@ -22,11 +22,33 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    //Objects added to an Array.
     _metricArray = [[NSArray alloc] initWithObjects:@"CPM",@"CPC", nil];
     
+    //When the view is tapped it will resign the keyboard using the 'removeKeyboard' method.
+    UITapGestureRecognizer *tabGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeKeyboard)];
+    [self.view addGestureRecognizer:tabGesture];
+    
+
 
 }
 
+//Removes the keyboard from view.
+- (void)removeKeyboard{
+    [self.metricTextField resignFirstResponder];
+    [self.revenueTextField resignFirstResponder];
+    [self.imprClickTextField resignFirstResponder];
+}
+
+
+- (IBAction)clearButton:(id)sender {
+    
+    self.metricTextField.text = nil;
+    self.revenueTextField.text = nil;
+    self.imprClickTextField.text = nil;
+    
+    NSLog(@"ClearButton Pressed.");
+}
 
 - (IBAction)calculateButton:(id)sender {
     
@@ -100,6 +122,12 @@
         }
         
     }
+    //Displays an error message if all TextFields have been filled in.
+    else if ([revenueString length] >= 1 && [imprClickString length] >= 1 && [metricString length] >= 1){
+        UIAlertView *fullTextFields = [[UIAlertView alloc] initWithTitle:@"Full Fields" message:@"What answer do you need?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Metric",@"Revenue", @"Impr/Clicks",@"Remove All", nil];
+        [fullTextFields show];
+
+    }
     else {
         //Displayed if something went wrong.
         [somethingWentWrongAlert show];
@@ -108,10 +136,23 @@
     
 }
 
-- (void)removeKeyboard{
-    [self.metricTextField resignFirstResponder];
-    [self.revenueTextField resignFirstResponder];
-    [self.imprClickTextField resignFirstResponder];
+//Checks the buttons that's selected in the 'fullTextFields' alert and removes whichever isn't needed.
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == 1) {
+        self.metricTextField.text = nil;
+        NSLog(@"Metric Selected");
+    }
+    else if (buttonIndex == 2){
+        self.revenueTextField.text = nil;
+        NSLog(@"Revenue Selected");
+    }
+    else if (buttonIndex == 3){
+        self.imprClickTextField.text = nil;
+        NSLog(@"Impr/Clicks Selected");
+    }
+    else if (buttonIndex == 4)
+        [self clearButton:self];
+        NSLog(@"Remove All Selected");
 }
 
 

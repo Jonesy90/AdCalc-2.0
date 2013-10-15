@@ -72,10 +72,23 @@
                                     <action selector="calculateButton:" destination="Kl4-Iv-T0G" eventType="touchUpInside" id="WXm-1C-8Ce"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="© Michael Jones 2013" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fI9-YN-CsD">
+                                <rect key="frame" x="103" y="537" width="114" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="AdCalc" id="DVv-h5-KBJ"/>
+                    <navigationItem key="navigationItem" title="AdCalc" id="DVv-h5-KBJ">
+                        <barButtonItem key="leftBarButtonItem" title="Clear" id="k53-1I-yCA">
+                            <connections>
+                                <action selector="clearButton:" destination="Kl4-Iv-T0G" id="SpM-7X-kKm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="imprClickLabel" destination="aQ8-TD-BdT" id="R8O-GI-w7q"/>
                         <outlet property="imprClickTextField" destination="AHB-na-0QV" id="I0H-UI-uNU"/>

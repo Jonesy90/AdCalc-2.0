@@ -33,6 +33,7 @@
 - (void)removeKeyboard;
 
 - (IBAction)calculateButton:(id)sender;
+- (IBAction)clearButton:(id)sender;
 
 
 @end
