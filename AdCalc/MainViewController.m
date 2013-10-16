@@ -122,19 +122,35 @@
         }
         
     }
+    //ElseIf Method when data is missing.
+    //Displays an error message if imprClickString and metricString are missing data.
+    else if ([revenueString length] >= 1 && [imprClickString length] == 0 && [metricString length] == 0){
+        UIAlertView *imprClickStringOrMetricStringMissing = [[UIAlertView alloc] initWithTitle:@"Need More Info" message:@"Please input data in the Metric or Impr/Click text fields" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles: nil];
+        [imprClickStringOrMetricStringMissing show];
+    }
+    //Displays an error message if RevenueString or MetricString are missing data.
+    else if ([revenueString length] == 0 && [imprClickString length] >= 1 && [metricString length] == 0){
+        UIAlertView *revenueStringOrMetricStringMissing = [[UIAlertView alloc] initWithTitle:@"Need More Info" message:@"Please input data for Revenue or Metric text fields" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
+        [revenueStringOrMetricStringMissing show];
+    }
+    //Displays an error message if RevenueString or Impr/ClickString are missing data.
+    else if ([revenueString length] == 0 && [imprClickString length] == 0 && [metricString length] >= 1){
+        UIAlertView *revenueStringOrImprClickStringMissing = [[UIAlertView alloc] initWithTitle:@"Need More Info" message:@"Please input data for Revenue or Impr/Click text field" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles: nil];
+        [revenueStringOrImprClickStringMissing show];
+    }
     //Displays an error message if all TextFields have been filled in.
     else if ([revenueString length] >= 1 && [imprClickString length] >= 1 && [metricString length] >= 1){
         UIAlertView *fullTextFields = [[UIAlertView alloc] initWithTitle:@"Full Fields" message:@"What answer do you need?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Metric",@"Revenue", @"Impr/Clicks",@"Remove All", nil];
         [fullTextFields show];
-
+        
     }
+    
     else {
         //Displayed if something went wrong.
         [somethingWentWrongAlert show];
     }
-
-    
 }
+
 
 //Checks the buttons that's selected in the 'fullTextFields' alert and removes whichever isn't needed.
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
@@ -183,11 +199,6 @@
 - (void) pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
     
     metricRow = [_metricPicker selectedRowInComponent:METRIC];
-    
-    //    //Metric Row Tests
-    //    if (metricRow == row) {
-    //         NSLog(@"Selected Item: %@",[_metricArray objectAtIndex:row]);
-    //    }
     
 }
 
