@@ -28,9 +28,6 @@
     //When the view is tapped it will resign the keyboard using the 'removeKeyboard' method.
     UITapGestureRecognizer *tabGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeKeyboard)];
     [self.view addGestureRecognizer:tabGesture];
-    
-
-
 }
 
 //Removes the keyboard from view.
@@ -57,6 +54,7 @@
     NSString *imprClickString = [self.imprClickTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSString *metricString = [self.metricTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
+    
     //Creating two float values that is taken from the two textFields.
     float revenue = [self.revenueTextField.text floatValue];
     float delivery = [self.imprClickTextField.text floatValue];
@@ -65,6 +63,11 @@
     //Alerts.
     UIAlertView *somethingWentWrongAlert = [[UIAlertView alloc] initWithTitle:@"Something Went Wrong" message:@"Something went wrong. Please try again." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles: nil];
     UIAlertView *blankFieldsAlert = [[UIAlertView alloc] initWithTitle:@"Whoops" message:@"Revenue or Delivery fields are blank, please fill in." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil];
+    UIAlertView *imprClickStringOrMetricStringMissing = [[UIAlertView alloc] initWithTitle:@"Need More Info" message:@"Please input data in the Metric or Impr/Click text fields" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles: nil];
+    UIAlertView *revenueStringOrMetricStringMissing = [[UIAlertView alloc] initWithTitle:@"Need More Info" message:@"Please input data for Revenue or Metric text fields" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
+    UIAlertView *revenueStringOrImprClickStringMissing = [[UIAlertView alloc] initWithTitle:@"Need More Info" message:@"Please input data for Revenue or Impr/Click text field" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles: nil];
+    UIAlertView *fullTextFields = [[UIAlertView alloc] initWithTitle:@"Full Fields" message:@"What answer do you need?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Metric",@"Revenue", @"Impr/Clicks",@"Remove All", nil];
+    
     
     
     //Checks the length of the revenue and delivery objects and sees if they length is equal to 0. If it is an alert will display.
@@ -89,6 +92,7 @@
             NSLog(@"CPC rate will be displayed.");
         }
     }
+
     //The Delivery and Metric TextFields have to be filled in. Revenue TextField will be calculated.
     else if ([revenueString length] == 0 && [imprClickString length] >= 1 && [metricString length] >=1) {
         //The CPM metric is selected in this IF statement.
@@ -125,26 +129,20 @@
     //ElseIf Method when data is missing.
     //Displays an error message if imprClickString and metricString are missing data.
     else if ([revenueString length] >= 1 && [imprClickString length] == 0 && [metricString length] == 0){
-        UIAlertView *imprClickStringOrMetricStringMissing = [[UIAlertView alloc] initWithTitle:@"Need More Info" message:@"Please input data in the Metric or Impr/Click text fields" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles: nil];
         [imprClickStringOrMetricStringMissing show];
     }
     //Displays an error message if RevenueString or MetricString are missing data.
     else if ([revenueString length] == 0 && [imprClickString length] >= 1 && [metricString length] == 0){
-        UIAlertView *revenueStringOrMetricStringMissing = [[UIAlertView alloc] initWithTitle:@"Need More Info" message:@"Please input data for Revenue or Metric text fields" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
         [revenueStringOrMetricStringMissing show];
     }
     //Displays an error message if RevenueString or Impr/ClickString are missing data.
     else if ([revenueString length] == 0 && [imprClickString length] == 0 && [metricString length] >= 1){
-        UIAlertView *revenueStringOrImprClickStringMissing = [[UIAlertView alloc] initWithTitle:@"Need More Info" message:@"Please input data for Revenue or Impr/Click text field" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles: nil];
         [revenueStringOrImprClickStringMissing show];
     }
     //Displays an error message if all TextFields have been filled in.
     else if ([revenueString length] >= 1 && [imprClickString length] >= 1 && [metricString length] >= 1){
-        UIAlertView *fullTextFields = [[UIAlertView alloc] initWithTitle:@"Full Fields" message:@"What answer do you need?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Metric",@"Revenue", @"Impr/Clicks",@"Remove All", nil];
         [fullTextFields show];
-        
     }
-    
     else {
         //Displayed if something went wrong.
         [somethingWentWrongAlert show];
@@ -172,7 +170,7 @@
 }
 
 
-#pragma MARK - UIPickerMethods
+#pragma mark - UIPickerMethods
 
 - (NSInteger) numberOfComponentsInPickerView:(UIPickerView *)pickerView{
     return 1;
