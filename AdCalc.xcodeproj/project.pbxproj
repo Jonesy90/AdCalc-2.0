@@ -21,9 +21,9 @@
 		4C29770D180D4EC6000246FC /* AdCalcTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C29770C180D4EC6000246FC /* AdCalcTests.m */; };
 		4C297717180D4F05000246FC /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C297716180D4F05000246FC /* MainStoryboard.storyboard */; };
 		4C29771A180D4F1A000246FC /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C297719180D4F1A000246FC /* MainViewController.m */; };
-		B2CB88B3180D9FAC00AB1231 /* AdCalc_AppStore_Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B2CB88B2180D9FAC00AB1231 /* AdCalc_AppStore_Logo.png */; };
-		B2CB88B5180DA0C200AB1231 /* AdCalc_LoadingScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = B2CB88B4180DA0C200AB1231 /* AdCalc_LoadingScreen.png */; };
-		B2CB88B7180DA16D00AB1231 /* AdCalc_LoadingScreen_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2CB88B6180DA16D00AB1231 /* AdCalc_LoadingScreen_2x.png */; };
+		4C47097F180FEF72000CB0EE /* AdCalc_AppStore_Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C47097C180FEF72000CB0EE /* AdCalc_AppStore_Logo.png */; };
+		4C470980180FEF72000CB0EE /* AdCalc_LoadingScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C47097D180FEF72000CB0EE /* AdCalc_LoadingScreen.png */; };
+		4C470981180FEF72000CB0EE /* AdCalc_LoadingScreen_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C47097E180FEF72000CB0EE /* AdCalc_LoadingScreen_2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,9 +56,9 @@
 		4C297716180D4F05000246FC /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainStoryboard.storyboard; path = ../MainStoryboard.storyboard; sourceTree = "<group>"; };
 		4C297718180D4F1A000246FC /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		4C297719180D4F1A000246FC /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		B2CB88B2180D9FAC00AB1231 /* AdCalc_AppStore_Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AdCalc_AppStore_Logo.png; sourceTree = "<group>"; };
-		B2CB88B4180DA0C200AB1231 /* AdCalc_LoadingScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AdCalc_LoadingScreen.png; sourceTree = "<group>"; };
-		B2CB88B6180DA16D00AB1231 /* AdCalc_LoadingScreen_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AdCalc_LoadingScreen_2x.png; sourceTree = "<group>"; };
+		4C47097C180FEF72000CB0EE /* AdCalc_AppStore_Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AdCalc_AppStore_Logo.png; path = ../../../../../../Desktop/AdCalc_AppStore_Logo.png; sourceTree = "<group>"; };
+		4C47097D180FEF72000CB0EE /* AdCalc_LoadingScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AdCalc_LoadingScreen.png; path = ../../../../../../Desktop/AdCalc_LoadingScreen.png; sourceTree = "<group>"; };
+		4C47097E180FEF72000CB0EE /* AdCalc_LoadingScreen_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AdCalc_LoadingScreen_2x.png; path = ../../../../../../Desktop/AdCalc_LoadingScreen_2x.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,9 +162,9 @@
 		4C29771B180D65BA000246FC /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				B2CB88B6180DA16D00AB1231 /* AdCalc_LoadingScreen_2x.png */,
-				B2CB88B4180DA0C200AB1231 /* AdCalc_LoadingScreen.png */,
-				B2CB88B2180D9FAC00AB1231 /* AdCalc_AppStore_Logo.png */,
+				4C47097C180FEF72000CB0EE /* AdCalc_AppStore_Logo.png */,
+				4C47097D180FEF72000CB0EE /* AdCalc_LoadingScreen.png */,
+				4C47097E180FEF72000CB0EE /* AdCalc_LoadingScreen_2x.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -248,11 +248,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2CB88B5180DA0C200AB1231 /* AdCalc_LoadingScreen.png in Resources */,
-				B2CB88B3180D9FAC00AB1231 /* AdCalc_AppStore_Logo.png in Resources */,
+				4C470980180FEF72000CB0EE /* AdCalc_LoadingScreen.png in Resources */,
+				4C47097F180FEF72000CB0EE /* AdCalc_AppStore_Logo.png in Resources */,
 				4C297717180D4F05000246FC /* MainStoryboard.storyboard in Resources */,
 				4C2976F2180D4EC6000246FC /* InfoPlist.strings in Resources */,
-				B2CB88B7180DA16D00AB1231 /* AdCalc_LoadingScreen_2x.png in Resources */,
+				4C470981180FEF72000CB0EE /* AdCalc_LoadingScreen_2x.png in Resources */,
 				4C2976FA180D4EC6000246FC /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
