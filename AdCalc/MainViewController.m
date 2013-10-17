@@ -57,7 +57,7 @@
     
     //Creating two float values that is taken from the two textFields.
     float revenue = [self.revenueTextField.text floatValue];
-    float delivery = [self.imprClickTextField.text floatValue];
+    float imprClickDel = [self.imprClickTextField.text floatValue];
     float metric = [self.metricTextField .text floatValue];
     
     //Alerts.
@@ -66,8 +66,6 @@
     UIAlertView *imprClickStringOrMetricStringMissing = [[UIAlertView alloc] initWithTitle:@"Need More Info" message:@"Please input data in the Metric or Impr/Click text fields" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles: nil];
     UIAlertView *revenueStringOrMetricStringMissing = [[UIAlertView alloc] initWithTitle:@"Need More Info" message:@"Please input data for Revenue or Metric text fields" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
     UIAlertView *revenueStringOrImprClickStringMissing = [[UIAlertView alloc] initWithTitle:@"Need More Info" message:@"Please input data for Revenue or Impr/Click text field" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles: nil];
-    UIAlertView *fullTextFields = [[UIAlertView alloc] initWithTitle:@"Full Fields" message:@"What answer do you need?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Metric",@"Revenue", @"Impr/Clicks",@"Remove All", nil];
-    
     
     
     //Checks the length of the revenue and delivery objects and sees if they length is equal to 0. If it is an alert will display.
@@ -80,14 +78,14 @@
         //The CPM metric is selected in this IF statement.
         if (metricRow == 0) {
             //Formula for figuring out the CPM rate.
-            metric = revenue / delivery * 1000;
+            metric = imprClickDel / (revenue * 1000);
             self.metricTextField.text = [[NSString alloc] initWithFormat:@"%0.02f", metric];
             NSLog(@"CPM rate will be displayed.");
         }
         //The CPC/CPA metric is selected in this ELSE/IF statement.
         else if (metricRow == 1) {
             //Formula for figuring out the CPC/CPA rate.
-            metric = revenue / delivery;
+            metric = imprClickDel / revenue;
             self.metricTextField.text = [[NSString alloc] initWithFormat:@"%0.02f", metric];
             NSLog(@"CPC rate will be displayed.");
         }
@@ -98,14 +96,14 @@
         //The CPM metric is selected in this IF statement.
         if (metricRow == 0){
             //Forumula for figuring out the Revenue (CPM).
-            revenue = metric * delivery / 1000;
+            revenue = imprClickDel * (metric / 1000);
             self.revenueTextField.text = [[NSString alloc] initWithFormat:@"%0.02f", revenue];
             NSLog(@"Revenue for a CPM campaign will be displayed.");
         }
         //The CPC/CPA metric is selected in this ELSE/IF statement.
         else if (metricRow == 0) {
             //Formula for figuring out the Revenue (CPC/CPA).
-            revenue = delivery * metric;
+            revenue = imprClickDel * metric;
             self.revenueTextField.text = [[NSString alloc] initWithFormat:@"%0.02f", revenue];
             NSLog(@"Revenue for a CPC/CPA campaign will be displayed.");
         }
@@ -114,14 +112,14 @@
     else if ([metricString length] >= 1 && [revenueString length] >= 1 && [imprClickString length] == 0){
         if (metricRow == 0) {
             //Formula for figuring out the amount to be delivered CPM.
-            delivery = metric * (1000/revenue);
-            self.imprClickTextField.text = [[NSString alloc] initWithFormat:@"%g", delivery];
+            imprClickDel = revenue * (metric * 1000);
+            self.imprClickTextField.text = [[NSString alloc] initWithFormat:@"%f", imprClickDel];
             NSLog(@"Impression amount to be delivered will be displayed.");
         }
         else if (metricRow == 1) {
             //Forumula for figuring out the amount to be delivered CPC/CPA.
-            delivery = revenue * metric;
-            self.imprClickTextField.text = [[NSString alloc] initWithFormat:@"%f", delivery];
+            imprClickDel = revenue * metric;
+            self.imprClickTextField.text = [[NSString alloc] initWithFormat:@"%f", imprClickDel];
             NSLog(@"Clicks/Conversions amount to be delivered will displayed.");
         }
         
@@ -139,36 +137,11 @@
     else if ([revenueString length] == 0 && [imprClickString length] == 0 && [metricString length] >= 1){
         [revenueStringOrImprClickStringMissing show];
     }
-    //Displays an error message if all TextFields have been filled in.
-    else if ([revenueString length] >= 1 && [imprClickString length] >= 1 && [metricString length] >= 1){
-        [fullTextFields show];
-    }
     else {
         //Displayed if something went wrong.
         [somethingWentWrongAlert show];
     }
 }
-
-
-//Checks the buttons that's selected in the 'fullTextFields' alert and removes whichever isn't needed.
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    if (buttonIndex == 1) {
-        self.metricTextField.text = nil;
-        NSLog(@"Metric Selected");
-    }
-    else if (buttonIndex == 2){
-        self.revenueTextField.text = nil;
-        NSLog(@"Revenue Selected");
-    }
-    else if (buttonIndex == 3){
-        self.imprClickTextField.text = nil;
-        NSLog(@"Impr/Clicks Selected");
-    }
-    else if (buttonIndex == 4)
-        [self clearButton:self];
-        NSLog(@"Remove All Selected");
-}
-
 
 #pragma mark - UIPickerMethods
 
