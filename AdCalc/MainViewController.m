@@ -33,7 +33,7 @@
 //Removes the keyboard from view.
 - (void)removeKeyboard{
     [self.metricTextField resignFirstResponder];
-    [self.revenueTextField resignFirstResponder];
+    [self.costTextField resignFirstResponder];
     [self.imprClickTextField resignFirstResponder];
 }
 
@@ -41,7 +41,7 @@
 - (IBAction)clearButton:(id)sender {
     
     self.metricTextField.text = nil;
-    self.revenueTextField.text = nil;
+    self.costTextField.text = nil;
     self.imprClickTextField.text = nil;
     
     NSLog(@"ClearButton Pressed.");
@@ -50,75 +50,76 @@
 - (IBAction)calculateButton:(id)sender {
     
     //Checks for white spaces within the textField.
-    NSString *revenueString = [self.revenueTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSString *costString = [self.costTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSString *imprClickString = [self.imprClickTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSString *metricString = [self.metricTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
     
     //Creating two float values that is taken from the two textFields.
-    float revenue = [self.revenueTextField.text floatValue];
+    float cost = [self.costTextField.text floatValue];
     float imprClickDel = [self.imprClickTextField.text floatValue];
     float metric = [self.metricTextField .text floatValue];
     
     //Alerts.
     UIAlertView *somethingWentWrongAlert = [[UIAlertView alloc] initWithTitle:@"Something Went Wrong" message:@"Something went wrong. Please try again." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles: nil];
-    UIAlertView *blankFieldsAlert = [[UIAlertView alloc] initWithTitle:@"Whoops" message:@"Revenue or Delivery fields are blank, please fill in." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil];
+    UIAlertView *blankFieldsAlert = [[UIAlertView alloc] initWithTitle:@"Whoops" message:@"cost or Delivery fields are blank, please fill in." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil];
     UIAlertView *imprClickStringOrMetricStringMissing = [[UIAlertView alloc] initWithTitle:@"Need More Info" message:@"Please input data in the Metric or Impr/Click text fields" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles: nil];
-    UIAlertView *revenueStringOrMetricStringMissing = [[UIAlertView alloc] initWithTitle:@"Need More Info" message:@"Please input data for Revenue or Metric text fields" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
-    UIAlertView *revenueStringOrImprClickStringMissing = [[UIAlertView alloc] initWithTitle:@"Need More Info" message:@"Please input data for Revenue or Impr/Click text field" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles: nil];
+    UIAlertView *costStringOrMetricStringMissing = [[UIAlertView alloc] initWithTitle:@"Need More Info" message:@"Please input data for cost or Metric text fields" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
+    UIAlertView *costStringOrImprClickStringMissing = [[UIAlertView alloc] initWithTitle:@"Need More Info" message:@"Please input data for cost or Impr/Click text field" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles: nil];
+    UIAlertView *allTextFieldsFilledInAlert = [[UIAlertView alloc] initWithTitle:@"All Fields Filled In" message:@"Empty a field and click 'Calculate'" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles: nil];
     
     
-    //Checks the length of the revenue and delivery objects and sees if they length is equal to 0. If it is an alert will display.
-    if ([revenueString length] == 0 && [imprClickString length] == 0 && [metricString length] == 0){
+    //Checks the length of the cost and delivery objects and sees if they length is equal to 0. If it is an alert will display.
+    if ([costString length] == 0 && [imprClickString length] == 0 && [metricString length] == 0){
         //This error message displays if no input has been made to the TextFields.
         [blankFieldsAlert show];
     }
-    //The Revenue and Delivery TextField have to be filled in. Metrics TextField will be calculated.
-    else if ([revenueString length] >= 1 && [imprClickString length] >= 1 && [metricString length] == 0) {
+    //The cost and Delivery TextField have to be filled in. Metrics TextField will be calculated.
+    else if ([costString length] >= 1 && [imprClickString length] >= 1 && [metricString length] == 0) {
         //The CPM metric is selected in this IF statement.
         if (metricRow == 0) {
             //Formula for figuring out the CPM rate.
-            metric = imprClickDel / (revenue * 1000);
+            metric = imprClickDel / (cost * 1000);
             self.metricTextField.text = [[NSString alloc] initWithFormat:@"%0.02f", metric];
             NSLog(@"CPM rate will be displayed.");
         }
         //The CPC/CPA metric is selected in this ELSE/IF statement.
         else if (metricRow == 1) {
             //Formula for figuring out the CPC/CPA rate.
-            metric = imprClickDel / revenue;
+            metric = imprClickDel / cost;
             self.metricTextField.text = [[NSString alloc] initWithFormat:@"%0.02f", metric];
             NSLog(@"CPC rate will be displayed.");
         }
     }
 
-    //The Delivery and Metric TextFields have to be filled in. Revenue TextField will be calculated.
-    else if ([revenueString length] == 0 && [imprClickString length] >= 1 && [metricString length] >=1) {
+    //The Delivery and Metric TextFields have to be filled in. cost TextField will be calculated.
+    else if ([costString length] == 0 && [imprClickString length] >= 1 && [metricString length] >=1) {
         //The CPM metric is selected in this IF statement.
         if (metricRow == 0){
-            //Forumula for figuring out the Revenue (CPM).
-            revenue = imprClickDel * (metric / 1000);
-            self.revenueTextField.text = [[NSString alloc] initWithFormat:@"%0.02f", revenue];
-            NSLog(@"Revenue for a CPM campaign will be displayed.");
+            //Forumula for figuring out the cost (CPM).
+            cost = imprClickDel * (metric / 1000);
+            self.costTextField.text = [[NSString alloc] initWithFormat:@"%0.02f", cost];
+            NSLog(@"cost for a CPM campaign will be displayed.");
         }
         //The CPC/CPA metric is selected in this ELSE/IF statement.
         else if (metricRow == 0) {
-            //Formula for figuring out the Revenue (CPC/CPA).
-            revenue = imprClickDel * metric;
-            self.revenueTextField.text = [[NSString alloc] initWithFormat:@"%0.02f", revenue];
-            NSLog(@"Revenue for a CPC/CPA campaign will be displayed.");
+            //Formula for figuring out the cost (CPC/CPA).
+            cost = imprClickDel * metric;
+            self.costTextField.text = [[NSString alloc] initWithFormat:@"%0.02f", cost];
+            NSLog(@"cost for a CPC/CPA campaign will be displayed.");
         }
     }
-    //The Metric and Revenue TextFields have been filled in. Delivery TextField will be calculated.
-    else if ([metricString length] >= 1 && [revenueString length] >= 1 && [imprClickString length] == 0){
+    //The Metric and cost TextFields have been filled in. Delivery TextField will be calculated.
+    else if ([metricString length] >= 1 && [costString length] >= 1 && [imprClickString length] == 0){
         if (metricRow == 0) {
             //Formula for figuring out the amount to be delivered CPM.
-            imprClickDel = revenue * (metric * 1000);
+            imprClickDel = cost * (metric * 1000);
             self.imprClickTextField.text = [[NSString alloc] initWithFormat:@"%f", imprClickDel];
             NSLog(@"Impression amount to be delivered will be displayed.");
         }
         else if (metricRow == 1) {
             //Forumula for figuring out the amount to be delivered CPC/CPA.
-            imprClickDel = revenue * metric;
+            imprClickDel = cost * metric;
             self.imprClickTextField.text = [[NSString alloc] initWithFormat:@"%f", imprClickDel];
             NSLog(@"Clicks/Conversions amount to be delivered will displayed.");
         }
@@ -126,16 +127,19 @@
     }
     //ElseIf Method when data is missing.
     //Displays an error message if imprClickString and metricString are missing data.
-    else if ([revenueString length] >= 1 && [imprClickString length] == 0 && [metricString length] == 0){
+    else if ([costString length] >= 1 && [imprClickString length] == 0 && [metricString length] == 0){
         [imprClickStringOrMetricStringMissing show];
     }
-    //Displays an error message if RevenueString or MetricString are missing data.
-    else if ([revenueString length] == 0 && [imprClickString length] >= 1 && [metricString length] == 0){
-        [revenueStringOrMetricStringMissing show];
+    //Displays an error message if costString or MetricString are missing data.
+    else if ([costString length] == 0 && [imprClickString length] >= 1 && [metricString length] == 0){
+        [costStringOrMetricStringMissing show];
     }
-    //Displays an error message if RevenueString or Impr/ClickString are missing data.
-    else if ([revenueString length] == 0 && [imprClickString length] == 0 && [metricString length] >= 1){
-        [revenueStringOrImprClickStringMissing show];
+    //Displays an error message if costString or Impr/ClickString are missing data.
+    else if ([costString length] == 0 && [imprClickString length] == 0 && [metricString length] >= 1){
+        [costStringOrImprClickStringMissing show];
+    }
+    else if ([costString length] >= 1 && [imprClickString length] >= 1 && [metricString length] >=1){
+        [allTextFieldsFilledInAlert show];
     }
     else {
         //Displayed if something went wrong.

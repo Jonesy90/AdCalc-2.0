@@ -19,12 +19,12 @@
 @property (nonatomic, strong) NSArray *metricArray;
 
 @property (strong, nonatomic) IBOutlet UILabel *metricLabel;
-@property (strong, nonatomic) IBOutlet UILabel *revenueLabel;
+@property (strong, nonatomic) IBOutlet UILabel *costLabel;
 @property (strong, nonatomic) IBOutlet UILabel *imprClickLabel;
 
 
 @property (strong, nonatomic) IBOutlet UITextField *metricTextField;
-@property (strong, nonatomic) IBOutlet UITextField *revenueTextField;
+@property (strong, nonatomic) IBOutlet UITextField *costTextField;
 @property (strong, nonatomic) IBOutlet UITextField *imprClickTextField;
 
 

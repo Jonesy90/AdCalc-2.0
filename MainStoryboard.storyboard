@@ -23,7 +23,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Revenue:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZW-Sx-Ddj">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cost:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZW-Sx-Ddj">
                                 <rect key="frame" x="20" y="148" width="103" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -90,13 +90,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="costLabel" destination="PZW-Sx-Ddj" id="vFW-As-Jt7"/>
+                        <outlet property="costTextField" destination="aQc-cR-GwV" id="Muy-0U-X4C"/>
                         <outlet property="imprClickLabel" destination="aQ8-TD-BdT" id="R8O-GI-w7q"/>
                         <outlet property="imprClickTextField" destination="AHB-na-0QV" id="I0H-UI-uNU"/>
                         <outlet property="metricLabel" destination="lMN-K4-M8b" id="Ufc-I2-pU3"/>
                         <outlet property="metricPicker" destination="Zj1-Ca-arx" id="AxV-Cx-Z2b"/>
                         <outlet property="metricTextField" destination="IJq-7j-dJE" id="wHt-MS-nAu"/>
-                        <outlet property="revenueLabel" destination="PZW-Sx-Ddj" id="L9G-Nl-Shv"/>
-                        <outlet property="revenueTextField" destination="aQc-cR-GwV" id="vFS-6k-lkx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tJy-FO-pcw" userLabel="First Responder" sceneMemberID="firstResponder"/>
